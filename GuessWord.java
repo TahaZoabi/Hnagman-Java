@@ -68,7 +68,7 @@ public class GuessWord {
             }
         }
         if (!userWon) { // check if user lost and display message
-            System.out.println("Game Over! The word was " + guessWord);
+             System.out.println("You Have Been Hnaged! The word was " + guessWord);
         }
     }
 
