@@ -43,6 +43,12 @@ public class GuessWord {
         for (int i = 0; i < maxGuessTries; i++) {
             String guessLetter = INPUT_SCANNER.next(); // get user letter guess
 
+               // make sure user only provides one letter
+            while (guessLetter.length() != 1){
+                System.out.println("Invalid Input, please only type ONE letter");
+                guessLetter = INPUT_SCANNER.next();
+            }
+
             // check if the word includes the guess letter
             if (Arrays.asList(guessWordLetters).contains(guessLetter)) {
                 System.out.println("Correct guess ");
