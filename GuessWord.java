@@ -33,8 +33,8 @@ public class GuessWord {
 
     // method to print shit
     public static void printDetails() {
-        System.out.println(STR."Word Letters: \{guessPlaceHolder}");
-        System.out.println(STR."Missed Letters: \{missedLetterList}");
+        System.out.println("Word Letters:" +guessPlaceHolder);
+        System.out.println("Missed Letters: " +missedLetterList);
         System.out.println("Guess Letter: ");
 
     }
@@ -68,7 +68,7 @@ public class GuessWord {
             }
         }
         if (!userWon) { // check if user lost and display message
-             System.out.println("You Have Been Hnaged! The word was " + guessWord);
+            System.out.println("You Have Been Hnaged! The word was " + guessWord);
         }
     }
 
