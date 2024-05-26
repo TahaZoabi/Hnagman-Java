@@ -21,7 +21,7 @@ public class GuessWord {
     // create a list for the word placeholder
     public static ArrayList<String> guessPlaceHolder = new ArrayList<String>();
     // create a list for the wrong letter guesses
-    static ArrayList<String> missedLetterList = new ArrayList<String>(maxGuessTries);
+   public static ArrayList<String> missedLetterList = new ArrayList<String>(maxGuessTries);
 
     // method to fill the place holder list with empty underscores
     public static void fillPlaceHolders() {
