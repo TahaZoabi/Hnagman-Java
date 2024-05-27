@@ -1,6 +1,12 @@
 public class Gallows {
-    public static void printGallows() {
-        switch (GuessWord.wrongGuessCounter) {
+    private GuessWord guessWord;
+
+    public Gallows(GuessWord guessWord) {
+        this.guessWord = guessWord;
+    }
+
+    public void printGallows() {
+        switch (guessWord.wrongGuessCounter) {
             case 0:
                 System.out.println("+---+\n" +
                         "|   |\n" +
