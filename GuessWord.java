@@ -7,13 +7,16 @@ public class GuessWord {
     public static final String[] words = {"ant", "baboon", "badger", "bat", "bear", "beaver", "camel", "cat", "clam", "cobra", "cougar", "coyote", "crow", "deer", "dog", "donkey", "duck", "eagle", "ferret", "fox", "frog", "goat", "goose", "hawk", "lion", "lizard", "llama", "mole", "monkey", "moose", "mouse", "mule", "newt", "otter", "owl", "panda", "parrot", "pigeon", "python", "rabbit", "ram", "rat", "raven", "rhino", "salmon", "seal", "shark", "sheep", "skunk", "sloth", "snake", "spider", "stork", "swan", "tiger", "toad", "trout", "turkey", "turtle", "weasel", "whale", "wolf", "wombat", "zebra"};
 
     public static final Scanner INPUT_SCANNER = new Scanner(System.in);
-    public static final int randomNumber = (int) (Math.random() * words.length);
 
-    public static final String guessWord = words[randomNumber]; // generate a random word
+    public static String generateRandomWord(){
+         int randomNumber = (int) (Math.random() * words.length);
+       return words[randomNumber];
+    }
+
+    public static final String guessWord = generateRandomWord(); // generate a random word
     public static final int guessWordLength = guessWord.length(); // get length of word
     public static final int maxGuessTries = 6; // hangman game ends after 6 wrong tries
     public static int wrongGuessCounter = 0; // keep track of what gallows to print
-
     public static boolean userWon = false; // used to check winner
 
     // make an array of the word letters
@@ -21,7 +24,7 @@ public class GuessWord {
     // create a list for the word placeholder
     public static ArrayList<String> guessPlaceHolder = new ArrayList<String>();
     // create a list for the wrong letter guesses
-   public static ArrayList<String> missedLetterList = new ArrayList<String>(maxGuessTries);
+    public static ArrayList<String> missedLetterList = new ArrayList<String>(maxGuessTries);
 
     // method to fill the place holder list with empty underscores
     public static void fillPlaceHolders() {
@@ -43,7 +46,7 @@ public class GuessWord {
         for (int i = 0; i < maxGuessTries; i++) {
             String guessLetter = INPUT_SCANNER.next(); // get user letter guess
 
-               // make sure user only provides one letter
+            // make sure user only provides one letter
             while (guessLetter.length() != 1){
                 System.out.println("Invalid Input, please only type ONE letter");
                 guessLetter = INPUT_SCANNER.next();
